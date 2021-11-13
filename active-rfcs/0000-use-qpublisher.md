@@ -108,6 +108,21 @@ For simplification, we can provide a template which uses internal the query dsl 
 </template>
 ````
 
+````html
+<template>
+    <q-publisher :query="query"
+    />
+</template>
+
+<script setup>
+const query = useQPublisherDSL({})
+    .select('title', 'description')
+    .where({draft: false})
+    .orderBy(date)
+    .limit(6)
+    .skip(2)
+</script>
+````
 
 # Adoption strategy
 
